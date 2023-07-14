@@ -1,5 +1,25 @@
+"""Linter"""
+from ting_file_management.file_management import txt_importer
+
+
 def process(path_file, instance):
     """Aqui irá sua implementação"""
+    for i in range(len(instance)):
+        file = instance.search(i)
+        if file["nome_do_arquivo"] == path_file:
+            return
+
+    txt_file = txt_importer(path_file)
+
+    dictionary = {
+        'nome_do_arquivo': path_file,
+        'qtd_linhas': len(txt_file),
+        'linhas_do_arquivo': txt_file,
+    }
+
+    instance.enqueue(dictionary)
+
+    print(dictionary)
 
 
 def remove(instance):
