@@ -1,4 +1,4 @@
-"""linter"""
+"""Linter"""
 import pytest
 from ting_file_management.priority_queue import PriorityQueue
 
@@ -23,4 +23,4 @@ def test_basic_priority_queueing():
     assert test_queue.search(0) == mock(2)
 
     with pytest.raises(IndexError):
-        test_queue.search(4)
+        test_queue.search(13)
